@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yazoo × Alkimi — Summer 2026 Campaign Proposal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #1333A2;
+      --blue: #1333A2;
+      --blue-dark: #0E2580;
+      --blue-mid: #1A3DB8;
+      --blue-light: #2347CC;
+      --sky: #19A9E0;
+      --sky-light: rgba(25, 169, 224, 0.2);
+      --yellow: #FFE000;
+      --yellow-dark: #E8C800;
+      --yellow-light: rgba(255, 224, 0, 0.15);
+      --pink: #E8194B;
+      --pink-light: #FF4D70;
+      --green: #00C86E;
+      --green-light: #00E87B;
+      --white: #FFFFFF;
+      --white-muted: rgba(255, 255, 255, 0.72);
+      --white-dim: rgba(255, 255, 255, 0.12);
+      --white-dimmer: rgba(255, 255, 255, 0.06);
+      --border: rgba(255, 255, 255, 0.18);
+      /* Legacy aliases so inline styles still resolve */
+      --choc: #FFFFFF;
+      --choc-mid: var(--sky);
+      --grey-light: rgba(255,255,255,0.55);
+      --grey-mid: rgba(255,255,255,0.4);
+      --surface1: rgba(255,255,255,0.08);
+      --font-title: 'Nunito', system-ui, sans-serif;
+      --font-body: 'Nunito', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 48px;
+      background: rgba(19, 51, 162, 0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 2px solid rgba(255,255,255,0.15);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 16px; }
+    .nav-logo svg { height: 22px; color: var(--white); fill: currentColor; }
+    .nav-divider { width: 1px; height: 22px; background: var(--border); }
+    .nav-label {
+      font-size: 0.6875rem; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase; color: var(--white-muted);
+    }
+    .nav-cta {
+      font-family: var(--font-body); font-size: 0.875rem; font-weight: 800;
+      padding: 10px 24px; background: var(--white); color: var(--blue);
+      border: none; border-radius: 9999px; cursor: pointer;
+      text-decoration: none; transition: background 0.2s, transform 0.15s;
+    }
+    .nav-cta:hover { background: var(--yellow); transform: scale(1.04); }
+
+    /* ─── LAYOUT ─── */
+    section { padding: 96px 0; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 48px; }
+    .section-divider { border: none; border-top: 1px solid var(--border); }
+    .section-header { max-width: 760px; margin-bottom: 12px; }
+    .section-title {
+      font-family: var(--font-title); font-size: clamp(1.6rem, 3vw, 2.5rem);
+      font-weight: 900; text-transform: uppercase; line-height: 1.12; margin-bottom: 16px;
+      color: var(--white);
+    }
+    .section-subtitle { font-size: 1rem; color: var(--white-muted); line-height: 1.75; }
+
+    /* ─── OVERLINE ─── */
+    .overline {
+      display: inline-block;
+      font-size: 0.6875rem; font-weight: 800;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--blue); background: var(--yellow);
+      padding: 3px 10px; border-radius: 4px; margin-bottom: 14px;
+    }
+    .overline.green { background: var(--green); color: var(--blue-dark); }
+
+    /* ─── BUTTONS ─── */
+    .btn-primary {
+      font-family: var(--font-body); font-size: 0.9rem; font-weight: 800;
+      padding: 14px 32px; background: var(--white); color: var(--blue);
+      border: 2px solid var(--white); border-radius: 9999px; cursor: pointer;
+      text-decoration: none; transition: transform 0.15s, background 0.2s, color 0.2s; display: inline-block;
+    }
+    .btn-primary:hover { background: var(--yellow); border-color: var(--yellow); transform: scale(1.04); }
+    .btn-secondary {
+      font-family: var(--font-body); font-size: 0.9rem; font-weight: 800;
+      padding: 14px 32px; background: transparent; color: var(--white);
+      border: 2px solid rgba(255,255,255,0.55); border-radius: 9999px; cursor: pointer;
+      text-decoration: none; transition: transform 0.15s, background 0.15s, border-color 0.15s; display: inline-block;
+    }
+    .btn-secondary:hover { background: rgba(255,255,255,0.12); border-color: var(--white); transform: scale(1.04); }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100vh; display: flex; align-items: center;
+      position: relative; overflow: hidden; padding-top: 80px;
+      background: var(--blue);
+    }
+    .hero::before {
+      content: ''; position: absolute; top: -160px; right: -160px;
+      width: 600px; height: 600px; border-radius: 50%;
+      background: var(--sky); opacity: 0.12; pointer-events: none;
+    }
+    .hero::after {
+      content: ''; position: absolute; bottom: -100px; left: -100px;
+      width: 440px; height: 440px; border-radius: 50%;
+      background: var(--white); opacity: 0.04; pointer-events: none;
+    }
+    .hero-content { position: relative; z-index: 1; max-width: 860px; }
+    .hero-title {
+      font-family: var(--font-title); font-size: clamp(2.8rem, 7vw, 5.2rem);
+      font-weight: 900; text-transform: uppercase; line-height: 1.0; margin-bottom: 28px;
+      color: var(--white);
+    }
+    .hero-title .gradient {
+      color: var(--yellow); -webkit-text-fill-color: var(--yellow);
+    }
+    .hero-subtitle {
+      font-size: clamp(1rem, 2vw, 1.15rem); font-weight: 500;
+      color: var(--white-muted); margin-bottom: 16px; max-width: 620px; line-height: 1.75;
+    }
+    .hero-note {
+      font-size: 0.8rem; color: var(--white-muted); margin-bottom: 48px; max-width: 580px; line-height: 1.6;
+      background: rgba(255,255,255,0.08); border-radius: 10px; padding: 12px 16px;
+      border: 1px solid var(--border);
+    }
+    .hero-note strong { color: var(--white); }
+    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+
+    /* ─── BRIEF GRID ─── */
+    .brief-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 48px; }
+    .brief-card {
+      background: var(--white-dim); border: 1.5px solid var(--border);
+      border-radius: 16px; padding: 32px;
+    }
+    .brief-card h3 { font-size: 1rem; font-weight: 800; margin-bottom: 16px; color: var(--white); }
+    .brief-card ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .brief-card ul li {
+      font-size: 0.875rem; color: var(--white-muted);
+      padding-left: 18px; position: relative; line-height: 1.6;
+    }
+    .brief-card ul li::before {
+      content: ''; position: absolute; left: 0; top: 8px;
+      width: 7px; height: 7px; background: var(--yellow); border-radius: 50%;
+    }
+    .brief-card.highlight {
+      background: rgba(255,224,0,0.1); border-color: rgba(255,224,0,0.3); grid-column: span 2;
+    }
+    .sku-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
+    .sku-pill {
+      background: var(--white-dim); border: 1.5px solid var(--border);
+      border-radius: 12px; padding: 14px 22px; text-align: center;
+    }
+    .sku-pill .name { font-weight: 800; font-size: 0.9rem; color: var(--white); }
+    .sku-pill .badge {
+      font-size: 0.625rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.08em; margin-top: 4px;
+    }
+    .sku-pill .badge.hero-sku { color: var(--yellow); }
+    .sku-pill .badge.secondary { color: var(--white-muted); }
+
+    /* ─── CASE STUDIES ─── */
+    .case-studies-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 48px; }
+    .case-study-card {
+      background: var(--white-dim); border: 1.5px solid var(--border);
+      border-radius: 20px; padding: 40px; position: relative; overflow: hidden;
+      transition: transform 0.2s, background 0.2s;
+    }
+    .case-study-card:hover { transform: translateY(-4px); background: rgba(255,255,255,0.15); }
+    .case-study-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+      background: var(--yellow);
+    }
+    .cs-meta { font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--white-muted); margin-bottom: 10px; }
+    .cs-title { font-family: var(--font-title); font-size: 1.2rem; font-weight: 900; text-transform: uppercase; margin-bottom: 6px; color: var(--white); }
+    .cs-sub { font-size: 0.8rem; color: var(--white-muted); margin-bottom: 32px; line-height: 1.5; }
+    .metrics-stack { display: flex; flex-direction: column; }
+    .metric-row {
+      display: flex; align-items: flex-start; gap: 20px;
+      padding: 18px 0; border-bottom: 1px solid var(--border);
+    }
+    .metric-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .metric-val {
+      font-family: var(--font-title); font-size: 1.9rem; font-weight: 900;
+      color: var(--yellow); min-width: 110px; white-space: nowrap; line-height: 1.1;
+    }
+    .metric-desc { font-size: 0.8rem; color: var(--white-muted); padding-top: 6px; line-height: 1.5; }
+    .cs-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--border); }
+    .tag {
+      font-size: 0.7rem; font-weight: 700; padding: 4px 12px; border-radius: 9999px;
+      background: rgba(255,224,0,0.15); color: var(--yellow); border: 1px solid rgba(255,224,0,0.3); letter-spacing: 0.02em;
+    }
+    .tag.green { background: rgba(0,200,110,0.15); color: var(--green); border-color: rgba(0,200,110,0.3); }
+    .insight-bar {
+      margin-top: 24px; padding: 22px 28px;
+      background: rgba(255,255,255,0.06); border: 1.5px solid var(--border); border-radius: 14px;
+    }
+    .insight-bar p { font-size: 0.875rem; color: var(--white-muted); line-height: 1.7; }
+    .insight-bar span { color: var(--yellow); font-weight: 700; }
+
+    /* ─── TARGETING ─── */
+    .targeting-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 48px; }
+    .targeting-card {
+      background: var(--white-dim); border: 1.5px solid var(--border);
+      border-radius: 16px; padding: 32px;
+    }
+    .targeting-card.wide { grid-column: span 2; }
+    .targeting-card h3 { font-size: 1rem; font-weight: 800; margin-bottom: 6px; color: var(--white); }
+    .targeting-card .tc-sub { font-size: 0.8rem; color: var(--sky); margin-bottom: 16px; font-weight: 700; }
+    .targeting-card ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+    .targeting-card ul li {
+      font-size: 0.8rem; color: var(--white-muted); padding-left: 18px; position: relative; line-height: 1.55;
+    }
+    .targeting-card ul li::before {
+      content: ''; position: absolute; left: 0; top: 7px;
+      width: 6px; height: 6px; background: var(--sky); border-radius: 50%;
+    }
+    .ai-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.65rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase;
+      padding: 4px 12px; border-radius: 9999px;
+      background: var(--yellow); color: var(--blue-dark); margin-bottom: 12px;
+    }
+    .conquest-bar {
+      margin-top: 20px; padding: 16px 20px;
+      background: rgba(255,255,255,0.06); border: 1px solid var(--border); border-radius: 10px;
+    }
+    .conquest-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--white-muted); margin-bottom: 10px; }
+    .competitor-pills { display: flex; gap: 8px; flex-wrap: wrap; }
+    .cpill {
+      font-size: 0.7rem; font-weight: 600; padding: 4px 12px; border-radius: 9999px;
+      background: var(--white-dim); border: 1px solid var(--border); color: var(--white-muted);
+    }
+
+    /* ─── FORMATS ─── */
+    .formats-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; margin-top: 48px; }
+    .format-card {
+      background: var(--white-dim); border: 1.5px solid var(--border);
+      border-radius: 20px; padding: 36px; transition: transform 0.2s, background 0.2s;
+    }
+    .format-card:hover { transform: translateY(-4px); background: rgba(255,255,255,0.15); }
+    .format-icon {
+      width: 52px; height: 52px; border-radius: 14px;
+      background: var(--yellow); border: none; display: flex; align-items: center;
+      justify-content: center; margin-bottom: 24px;
+    }
+    .format-icon.green-icon { background: var(--sky); }
+    .format-icon svg { width: 26px; height: 26px; stroke: var(--blue-dark); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    .format-icon.green-icon svg { stroke: var(--blue-dark); }
+    .format-card h3 { font-size: 1.2rem; font-weight: 900; margin-bottom: 6px; color: var(--white); }
+    .format-card .format-type { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--sky); margin-bottom: 16px; }
+    .format-card > p { font-size: 0.875rem; color: var(--white-muted); line-height: 1.75; margin-bottom: 24px; }
+    .perf-mini {
+      background: rgba(255,255,255,0.06); border: 1px solid var(--border);
+      border-radius: 10px; padding: 16px; margin-bottom: 20px;
+    }
+    .perf-label { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--white-muted); margin-bottom: 10px; }
+    .perf-mini-row { display: flex; gap: 24px; }
+    .perf-mini-item .v { font-family: var(--font-title); font-size: 1.3rem; color: var(--yellow); font-weight: 900; }
+    .perf-mini-item .l { font-size: 0.65rem; color: var(--white-muted); margin-top: 2px; }
+    .format-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+    .lumen-badge {
+      display: inline-flex; align-items: center; gap: 6px; font-size: 0.7rem; font-weight: 700;
+      padding: 5px 12px; border-radius: 9999px;
+      background: var(--yellow); color: var(--blue-dark);
+      margin-top: 14px;
+    }
+
+    /* ─── BUDGET ─── */
+    .budget-toggle {
+      display: flex; background: rgba(255,255,255,0.1); border: 1.5px solid var(--border);
+      border-radius: 9999px; padding: 4px; width: fit-content; margin: 48px auto 0;
+    }
+    .toggle-btn {
+      font-family: var(--font-body); font-size: 0.875rem; font-weight: 800;
+      padding: 10px 32px; border-radius: 9999px; border: none; cursor: pointer;
+      transition: background 0.2s, color 0.2s; background: transparent; color: var(--white-muted);
+    }
+    .toggle-btn.active { background: var(--white); color: var(--blue); }
+    .budget-plans { margin-top: 40px; }
+    .budget-plan { display: none; }
+    .budget-plan.active { display: block; }
+    .bursts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+    .burst-card {
+      background: var(--white-dim); border: 1.5px solid var(--border); border-radius: 20px; padding: 36px;
+    }
+    .burst-head { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 24px; }
+    .burst-name { font-family: var(--font-title); font-size: 0.78rem; font-weight: 900; text-transform: uppercase; color: var(--white); }
+    .burst-dates-block { margin-top: 6px; }
+    .burst-date { font-size: 0.7rem; color: var(--white-muted); line-height: 1.5; }
+    .burst-total { font-family: var(--font-title); font-size: 1.6rem; font-weight: 900; color: var(--yellow); text-align: right; }
+    .burst-pct { font-size: 0.65rem; color: var(--white-muted); text-align: right; margin-top: 4px; }
+    .format-lines { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
+    .fline {
+      display: flex; align-items: center; gap: 10px;
+      padding: 10px 14px; background: rgba(255,255,255,0.06); border: 1px solid var(--border); border-radius: 8px;
+    }
+    .fline-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--yellow); flex-shrink: 0; }
+    .fline-dot.gd { background: var(--sky); }
+    .fline-name { font-size: 0.8rem; color: var(--white-muted); font-weight: 600; }
+    .timeline-mini { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border); }
+    .timeline-mini-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+    .tl-key { font-size: 0.65rem; color: var(--white-muted); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; }
+    .tl-val { font-size: 0.75rem; color: var(--white); font-weight: 700; }
+    .tl-val.live { color: var(--yellow); font-weight: 800; }
+    .budget-total-bar {
+      background: var(--white); border-radius: 16px; padding: 28px 36px;
+      display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap;
+    }
+    .total-label { font-size: 0.8rem; color: var(--blue-mid); }
+    .total-label strong { display: block; font-family: var(--font-title); font-size: 2rem; color: var(--blue); margin-top: 4px; font-weight: 900; }
+    .budget-note { font-size: 0.75rem; color: var(--blue-mid); max-width: 440px; text-align: right; line-height: 1.6; }
+
+    /* ─── TIMELINE ─── */
+    .timeline-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; margin-top: 48px; }
+    .burst-col-label {
+      font-family: var(--font-title); font-size: 0.65rem; font-weight: 900;
+      text-transform: uppercase; color: var(--white);
+      padding-bottom: 16px; margin-bottom: 32px; border-bottom: 2px solid var(--yellow);
+    }
+    .tl-track { position: relative; padding-left: 28px; }
+    .tl-track::before {
+      content: ''; position: absolute; left: 9px; top: 8px; bottom: 8px;
+      width: 2px; background: rgba(255,255,255,0.2);
+    }
+    .tl-item { position: relative; padding-bottom: 36px; }
+    .tl-item:last-child { padding-bottom: 0; }
+    .tl-dot {
+      position: absolute; left: -19px; top: 5px;
+      width: 13px; height: 13px; border-radius: 50%;
+      background: var(--white-dim); border: 2.5px solid var(--white); z-index: 1;
+    }
+    .tl-dot.live { background: var(--yellow); border-color: var(--yellow); }
+    .tl-date { font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--white-muted); margin-bottom: 5px; }
+    .tl-date.live { color: var(--yellow); }
+    .tl-title { font-size: 0.95rem; font-weight: 800; margin-bottom: 6px; color: var(--white); }
+    .tl-desc { font-size: 0.8rem; color: var(--white-muted); line-height: 1.65; }
+
+    /* ─── MEASUREMENT ─── */
+    .measurement-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin-top: 48px; }
+    .measure-card {
+      background: var(--white-dim); border: 1.5px solid var(--border); border-radius: 16px; padding: 28px;
+    }
+    .measure-badge {
+      display: inline-block; font-size: 0.6rem; font-weight: 700; padding: 3px 10px;
+      border-radius: 9999px; background: rgba(0,200,110,0.2); color: var(--green); margin-bottom: 12px;
+      text-transform: uppercase; letter-spacing: 0.06em; border: 1px solid rgba(0,200,110,0.3);
+    }
+    .measure-badge.foc { background: rgba(255,224,0,0.15); color: var(--yellow); border-color: rgba(255,224,0,0.3); }
+    .measure-card h4 { font-size: 0.95rem; font-weight: 800; margin-bottom: 10px; color: var(--white); }
+    .measure-card p { font-size: 0.8rem; color: var(--white-muted); line-height: 1.7; }
+    .kpi-bar {
+      margin-top: 20px; padding: 24px 32px;
+      background: rgba(255,255,255,0.06); border: 1.5px solid var(--border); border-radius: 14px;
+    }
+    .kpi-cols { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
+    .kpi-col-label { font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--white-muted); margin-bottom: 8px; }
+    .kpi-col-val { font-size: 0.8rem; color: var(--white-muted); line-height: 1.6; }
+
+    /* ─── WHY ALKIMI ─── */
+    .proof-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 48px; }
+    .proof-card {
+      background: var(--white); border-radius: 14px; padding: 24px; text-align: center;
+      transition: transform 0.15s;
+    }
+    .proof-card:hover { transform: translateY(-4px); }
+    .proof-val {
+      font-family: var(--font-title); font-size: 1.8rem; font-weight: 900;
+      color: var(--blue); margin-bottom: 8px;
+    }
+    .proof-lbl { font-size: 0.8rem; color: var(--blue-mid); line-height: 1.4; }
+    .pillars-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-top: 16px; }
+    .pillar {
+      background: var(--white-dim); border: 1.5px solid var(--border);
+      border-radius: 12px; padding: 20px 24px;
+    }
+    .pillar h5 { font-size: 0.875rem; font-weight: 800; margin-bottom: 8px; color: var(--white); }
+    .pillar p { font-size: 0.8rem; color: var(--white-muted); line-height: 1.6; }
+
+    /* ─── CTA ─── */
+    .cta-section { text-align: center; position: relative; overflow: hidden; background: var(--blue-dark); }
+    .cta-section::before {
+      content: ''; position: absolute; top: -100px; left: 50%; transform: translateX(-50%);
+      width: 600px; height: 600px; border-radius: 50%;
+      background: var(--sky); opacity: 0.1; pointer-events: none;
+    }
+    .cta-title {
+      font-family: var(--font-title); font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 900; text-transform: uppercase; line-height: 1.12;
+      margin-bottom: 20px; position: relative; color: var(--white);
+    }
+    .cta-title .gradient { color: var(--yellow); -webkit-text-fill-color: var(--yellow); }
+    .cta-subtitle {
+      font-size: 1.05rem; color: var(--white-muted); margin-bottom: 44px;
+      max-width: 540px; margin-left: auto; margin-right: auto;
+      line-height: 1.7; position: relative;
+    }
+    .cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; position: relative; }
+    .cta-meta { margin-top: 36px; font-size: 0.75rem; color: rgba(255,255,255,0.35); }
+
+    /* ─── FOOTER ─── */
+    footer { border-top: 2px solid rgba(255,255,255,0.15); padding: 28px 0; background: var(--blue-dark); }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; }
+    .footer-logo svg { height: 18px; color: rgba(255,255,255,0.45); fill: currentColor; }
+    .footer-note { font-size: 0.7rem; color: rgba(255,255,255,0.35); max-width: 480px; text-align: right; line-height: 1.5; }
+
+    /* ─── ALTERNATING SECTION BACKGROUNDS ─── */
+    #targeting { background: var(--blue-mid); }
+    #why-alkimi { background: var(--blue-mid); }
+
+    /* ─── ANIMATIONS ─── */
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      nav { padding: 16px 24px; }
+      .nav-label { display: none; }
+      section { padding: 64px 0; }
+      .container { padding: 0 24px; }
+      .brief-grid, .case-studies-grid, .formats-grid, .bursts-grid,
+      .timeline-cols, .measurement-grid, .proof-grid,
+      .pillars-grid, .kpi-cols, .targeting-grid { grid-template-columns: 1fr 1fr; }
+      .bursts-grid, .timeline-cols, .case-studies-grid { grid-template-columns: 1fr; }
+      .brief-card.highlight, .targeting-card.wide { grid-column: span 2; }
+      .formats-grid { grid-template-columns: 1fr; }
+      .budget-total-bar { flex-direction: column; gap: 12px; }
+      .budget-note { text-align: left; }
+      .footer-inner { flex-direction: column; gap: 12px; text-align: center; }
+      .footer-note { text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav>
+  <div class="nav-logo">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="68 46 216 48">
+      <path d="M83.8615 58.6759C78.5907 58.5085 73.4034 59.9878 69.0608 62.8966L72.2676 68.7C75.3341 66.4522 79.084 65.2623 82.9241 65.3187C88.7704 65.3187 91.6565 68.0525 91.6565 72.7289V73.2325H82.5787C71.9222 73.2325 68 77.693 68 83.4005C68 89.1081 73.057 93.6166 81.074 93.6166C86.3283 93.6166 90.1518 91.9618 92.1005 89.0121V93.1609H99.8462V73.0646C99.8462 63.2323 93.9999 58.6759 83.8861 58.6759H83.8615ZM91.6319 82.5132C90.9055 84.187 89.6588 85.5979 88.0663 86.5483C86.4738 87.4987 84.6154 87.9409 82.7514 87.8131C78.5332 87.8131 76.0417 85.9665 76.0417 83.0168C76.0417 80.6187 77.5465 78.4844 83.1461 78.4844H91.6319V82.4413V82.5132Z"/>
+      <path d="M113.711 46H105.497V93.4109H113.711V46Z"/>
+      <path d="M145.855 93.7292H155.845L139.811 73.9447L154.464 59.6278H144.597L127.576 74.9519V46H119.361V93.7292H127.576V84.7362L133.693 79.1006L145.855 93.7292Z"/>
+      <path d="M167.592 59.3477H159.378V93.473H167.592V59.3477Z"/>
+      <path d="M218.253 59.034C215.761 58.9459 213.281 59.412 211.002 60.397C208.724 61.382 206.707 62.8597 205.105 64.7176C203.822 62.8392 202.051 61.324 199.972 60.3258C197.892 59.3277 195.578 58.8819 193.264 59.034C191.102 58.9506 188.947 59.3381 186.958 60.1679C184.97 60.9977 183.197 62.2489 181.769 63.8302V59.4896H173.949V93.591H182.164V76.2765C182.164 69.5138 185.839 66.0605 191.291 66.0605C196.224 66.0605 199.184 69.0102 199.184 75.0774V93.591H207.399V76.2765C207.399 69.5138 211.148 66.0605 216.526 66.0605C221.46 66.0605 224.42 69.0102 224.42 75.0774V93.591H232.634V74.0463C232.634 63.7583 226.714 59.1059 218.253 59.1059"/>
+      <path d="M246.093 85.2653V67.2933C246.093 62.7562 242.415 59.0781 237.877 59.0781V93.4804C242.415 93.4804 246.093 89.8024 246.093 85.2653Z"/>
+      <path d="M262.163 59.0781C260.952 59.0781 261.062 60.3218 261.503 60.7674C261.985 61.1977 263.589 62.8645 263.589 62.8645L263.589 67.5642C263.589 67.5642 254.221 84.7493 253.026 86.9955C251.49 89.8835 253.906 93.4804 256.657 93.4804C258.562 93.4804 275.266 93.4804 278.111 93.4804C281.412 93.4804 283.833 90.0974 282.292 86.9955C281.75 85.9032 271.51 67.5642 271.51 67.5642V62.867L273.621 60.7674C274.267 60.1379 273.968 59.0781 273.044 59.0781C272.12 59.0781 263.549 59.0781 262.163 59.0781Z"/>
+    </svg>
+    <div class="nav-divider"></div>
+    <span class="nav-label">Prepared for Yazoo — Summer 2026</span>
+  </div>
+  <a href="mailto:tanya.o@alkimi.org?subject=Yazoo%20×%20Alkimi%20—%20Summer%202026" class="nav-cta">Let's talk</a>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero" id="top">
+  <div class="container">
+    <div class="hero-content">
+      <p class="overline">Summer 2026 Campaign Proposal</p>
+      <h1 class="hero-title">
+        Reigniting<br>Yazoo for<br>
+        <span class="gradient">Gen Z</span>
+      </h1>
+      <p class="hero-subtitle">
+        Premium 100% Share of Screen display and video, delivered via Alkimi's fully managed service — ensuring Yazoo's brand reaches the right 18–24 year olds in brand-safe, high-quality editorial environments.
+      </p>
+      <p class="hero-note">
+        <strong>Fully managed service.</strong> Takeover-style buys with programmatic efficiency. Three format options — 100% SOS Display, 100% SOS Video (short-form), and OLV Pre-roll (long-form) — we confirm the mix once we see what assets you have. No bespoke production required. All placements HFSS-compliant.
+      </p>
+      <div class="hero-actions">
+        <a href="https://docs.google.com/spreadsheets/d/1-i_0YQhZkyVbnjxxeJnLWNcp46uyRVvvdwuwgpz_9lk/edit?gid=315260830#gid=315260830" target="_blank" rel="noopener" class="btn-primary">View the plan</a>
+        <a href="mailto:tanya.o@alkimi.org?subject=Yazoo%20×%20Alkimi%20—%20Summer%202026" class="btn-secondary">Let's talk</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ═══ THE BRIEF ═══ -->
+<section id="brief">
+  <div class="container">
+    <div class="section-header fade-in">
+      <p class="overline">We Heard You</p>
+      <h2 class="section-title">The challenge</h2>
+      <p class="section-subtitle">
+        Yazoo has something most brands spend decades trying to build — genuine nostalgia, deep product familiarity, and real emotional warmth. The task is not to create brand love from scratch. It's to reframe an existing relationship for an audience ready to rediscover it on their own terms.
+      </p>
+    </div>
+
+    <div class="brief-grid">
+      <div class="brief-card fade-in">
+        <h3>Communications objective</h3>
+        <ul>
+          <li>Reignite relevance with the 16–24 year-old Gen Z audience</li>
+          <li>Be the market-leading brand for differentiation and innovativeness</li>
+          <li>Fuel brand power by tapping into Gen Z's world — authentically</li>
+        </ul>
+      </div>
+
+      <div class="brief-card fade-in">
+        <h3>Brand imagery goals</h3>
+        <ul>
+          <li>Reduce — "is a brand for children"</li>
+          <li>Increase — "is a brand I'm proud to be seen with"</li>
+          <li>Increase — "is a brand for people like me"</li>
+          <li>Increase — "is a fun brand"</li>
+        </ul>
+      </div>
+
+      <div class="brief-card fade-in">
+        <h3>Target audience</h3>
+        <ul>
+          <li>"Learner Adults" aged 16–24, navigating major life transitions</li>
+          <li>Seeking authenticity, comfort, and moments of genuine escape</li>
+          <li>Broad UK — priority: London, Birmingham, Manchester</li>
+          <li>September burst: university cities added for freshers</li>
+        </ul>
+      </div>
+
+      <div class="brief-card fade-in">
+        <h3>Campaign flighting</h3>
+        <ul>
+          <li>Burst 1: 29th June 2026 — 8-week summer penetration drive</li>
+          <li>Burst 2: 1st September 2026 — 4-week freshers and year-round SOV</li>
+          <li>Primary KPIs: Reach &amp; Impressions — core range</li>
+          <li>Two budget tiers: £70,000 and £30,000</li>
+        </ul>
+      </div>
+
+      <div class="brief-card highlight fade-in">
+        <h3>Products in focus</h3>
+        <p style="font-size: 0.875rem; color: var(--grey-light); margin-bottom: 20px;">All formats and placements are HFSS-compliant. We apply audience and contextual restrictions in line with CAP/BCAP regulations to ensure Yazoo's ads do not appear in contexts primarily targeting under-18s.</p>
+        <div class="sku-row">
+          <div class="sku-pill"><div class="name">Chocolate</div><div class="badge hero-sku">Hero SKU</div></div>
+          <div class="sku-pill"><div class="name">Strawberry</div><div class="badge hero-sku">Hero SKU</div></div>
+          <div class="sku-pill"><div class="name">Banana</div><div class="badge secondary">Secondary</div></div>
+          <div class="sku-pill"><div class="name">Vanilla</div><div class="badge secondary">Secondary</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ═══ PROOF ═══ -->
+<section id="proof">
+  <div class="container">
+    <div class="section-header fade-in">
+      <p class="overline">The Proof</p>
+      <h2 class="section-title">A proven track record in FMCG</h2>
+      <p class="section-subtitle">
+        As a global partner of Coca-Cola, Alkimi has delivered measurable results for some of the world's biggest FMCG brands. Both campaigns below were independently verified by IAS, in the UK market, across comparable audiences.
+      </p>
+    </div>
+
+    <div class="case-studies-grid">
+
+      <!-- FMCG -->
+      <div class="case-study-card fade-in">
+        <div class="cs-meta">UK 2024 &amp; 2025</div>
+        <div class="cs-title">FMCG</div>
+        <div class="cs-sub">Coca-Cola, Alpro &amp; FuzeTea — 100% Share of Screen display &amp; video, premium editorial inventory</div>
+        <div class="metrics-stack">
+          <div class="metric-row">
+            <div class="metric-val">+22%</div>
+            <div class="metric-desc">Product consideration — intent increase among target audience. Perception visibly shifted.</div>
+          </div>
+          <div class="metric-row">
+            <div class="metric-val">+73%</div>
+            <div class="metric-desc">Ad recall — brand memory formation well above industry norms. The ad landed and stuck.</div>
+          </div>
+          <div class="metric-row">
+            <div class="metric-val">0.39%</div>
+            <div class="metric-desc">CTR — reflecting effective audience engagement across premium publisher environments</div>
+          </div>
+          <div class="metric-row">
+            <div class="metric-val">97%</div>
+            <div class="metric-desc">IAS Pass Rate. Every impression a quality impression in a brand-safe environment.</div>
+          </div>
+        </div>
+        <div class="cs-tags">
+          <span class="tag">FMCG</span>
+          <span class="tag">100% Share of Screen</span>
+          <span class="tag green">IAS Verified</span>
+          <span class="tag green">Coca-Cola Partner</span>
+        </div>
+      </div>
+
+      <!-- Samsung -->
+      <div class="case-study-card fade-in">
+        <div class="cs-meta">UK 2025</div>
+        <div class="cs-title">Samsung</div>
+        <div class="cs-sub">Online Video — Targeting Gen Z &amp; Millennial Tech Enthusiasts — the same demographic as Yazoo's brief</div>
+        <div class="metrics-stack">
+          <div class="metric-row">
+            <div class="metric-val">+22%</div>
+            <div class="metric-desc">Added value delivered above standard benchmarks across the campaign period</div>
+          </div>
+          <div class="metric-row">
+            <div class="metric-val">2.7×</div>
+            <div class="metric-desc">CTR versus category benchmark of 0.10% — genuine engagement, not accidental interaction</div>
+          </div>
+          <div class="metric-row">
+            <div class="metric-val">89%</div>
+            <div class="metric-desc">Peak Video Completion Rate. 83% average — 9.8× above category benchmark. Gen Z watched it.</div>
+          </div>
+        </div>
+        <div class="cs-tags">
+          <span class="tag">OLV</span>
+          <span class="tag">Gen Z</span>
+          <span class="tag">Millennials</span>
+          <span class="tag green">IAS Verified</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="insight-bar fade-in">
+      <p>
+        <span>Why this matters for Yazoo.</span> The FMCG results show Alkimi's ability to drive real consideration uplift and lasting brand recall in consumer goods — exactly the perception-change metrics at the heart of Yazoo's brief. Samsung confirms the same formats with the same demographic: Gen Z, UK, verified completion well above benchmark.
+      </p>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ═══ TARGETING ═══ -->
+<section id="targeting">
+  <div class="container">
+    <div class="section-header fade-in">
+      <p class="overline">Placement Graph + ALEx AI</p>
+      <h2 class="section-title">Reaching the Gen Z bullseye</h2>
+      <p class="section-subtitle">
+        Using Alkimi's proprietary Placement Graph, we build a layered audience strategy that goes well beyond age demographics — capturing mindset, moment, and cultural context. ALEx AI ensures every placement is contextually aligned to the content Gen Z is choosing to engage with right now.
+      </p>
+    </div>
+
+    <div class="targeting-grid">
+      <div class="targeting-card fade-in">
+        <h3>Intent-based targeting</h3>
+        <div class="tc-sub">Users in active discovery mode</div>
+        <ul>
+          <li>Browsing food and drink discovery, convenience snacking content</li>
+          <li>"What to drink" editorial and category keyword alignment</li>
+          <li>FMCG and chilled beverage contextual environments</li>
+        </ul>
+      </div>
+
+      <div class="targeting-card fade-in">
+        <h3>Interest &amp; culture</h3>
+        <div class="tc-sub">Where Gen Z actually spends attention</div>
+        <ul>
+          <li>Music, gaming, sport, pop culture, and student life</li>
+          <li>Urban lifestyle, late-night snacking, self-expression content</li>
+          <li>Nostalgia-driven editorial — ideal for Yazoo's heritage angle</li>
+        </ul>
+      </div>
+
+      <div class="targeting-card fade-in">
+        <h3>Lifestyle segments</h3>
+        <div class="tc-sub">The Learner Adult precisely defined</div>
+        <ul>
+          <li>Students, early careerists, urban Gen Z</li>
+          <li>Social media natives and comfort-seekers</li>
+          <li>First-time independents navigating life transitions</li>
+        </ul>
+      </div>
+
+      <div class="targeting-card fade-in">
+        <div class="ai-badge">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          ALEx AI — Contextual Intelligence
+        </div>
+        <h3>Contextual alignment</h3>
+        <div class="tc-sub">AI-powered placement matching</div>
+        <ul>
+          <li>Music culture, student editorial, comedy and entertainment</li>
+          <li>Sports highlights and lifestyle media</li>
+          <li>Ensures Yazoo appears in environments that reinforce "fun brand" and "brand for me"</li>
+        </ul>
+      </div>
+
+      <div class="targeting-card wide fade-in">
+        <h3>Behavioural conquest</h3>
+        <div class="tc-sub">Audiences already engaging with category competitors</div>
+        <div class="conquest-bar">
+          <div class="conquest-label">Competitor targeting — behavioural signals from</div>
+          <div class="competitor-pills">
+            <span class="cpill">Frijj</span>
+            <span class="cpill">Shaken Udder</span>
+            <span class="cpill">Chocomel</span>
+            <span class="cpill">Starbucks Chilled</span>
+            <span class="cpill">Cadbury's</span>
+            <span class="cpill">Mars</span>
+            <span class="cpill">Arctic Coffee</span>
+            <span class="cpill">Emmi</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ═══ FORMATS ═══ -->
+<section id="formats">
+  <div class="container">
+    <div class="section-header fade-in">
+      <p class="overline">Recommended Formats</p>
+      <h2 class="section-title">100% Share of Screen</h2>
+      <p class="section-subtitle">
+        Three format options — choose based on the assets Yazoo has available. All place Yazoo as the only creative on screen inside premium publisher environments. The right format depends on what you're working with: display creative, short-form video, or long-form video.
+      </p>
+    </div>
+
+    <div class="formats-grid">
+      <div class="format-card fade-in">
+        <div class="format-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <h3>100% Share of Screen</h3>
+        <p class="format-type">Display</p>
+        <p>
+          Yazoo is the sole creative on screen — placed at the moment a consumer opens premium editorial they've actively chosen to read. No banner blindness, no competing content, no scroll-past. This is the format behind +73% ad recall and +22% consideration uplift in our FMCG work. Standard IAB display specs. Existing creative assets can be adapted with no additional production burden.
+        </p>
+        <div class="perf-mini">
+          <div class="perf-label">Benchmark performance — UK FMCG</div>
+          <div class="perf-mini-row">
+            <div class="perf-mini-item"><div class="v">+73%</div><div class="l">Ad recall</div></div>
+            <div class="perf-mini-item"><div class="v">+22%</div><div class="l">Consideration</div></div>
+            <div class="perf-mini-item"><div class="v">97%</div><div class="l">IAS Pass Rate</div></div>
+          </div>
+        </div>
+        <div class="format-tags">
+          <span class="tag">Standard IAB specs</span>
+          <span class="tag">Direct IO</span>
+          <span class="tag green">HFSS compliant</span>
+        </div>
+        <div class="lumen-badge">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          60% more attention than standard display — Lumen verified
+        </div>
+      </div>
+
+      <div class="format-card fade-in">
+        <div class="format-icon green-icon">
+          <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+        </div>
+        <h3>100% Share of Screen</h3>
+        <p class="format-type">Video — Short-form assets</p>
+        <p>
+          If Yazoo has existing short-form video content — social clips, brand films, cutdowns — we serve it as the sole creative across all IAB ad units on the page in full SOS format. Full-screen ownership, zero competing content, zero distraction. The same emotional power of video storytelling with the attention dominance of 100% Share of Screen. Standard IAB video specs. No bespoke production required.
+        </p>
+        <div class="perf-mini">
+          <div class="perf-label">Best for</div>
+          <div style="font-size: 0.8rem; color: var(--grey-light); line-height: 1.6; margin-top: 4px;">Existing social video, brand cutdowns, short-form content. Maximises asset value — no new production needed.</div>
+        </div>
+        <div class="format-tags">
+          <span class="tag">Standard IAB specs</span>
+          <span class="tag">All IAB units on page</span>
+          <span class="tag green">HFSS compliant</span>
+        </div>
+        <div class="lumen-badge">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          60% more attention than standard display — Lumen verified
+        </div>
+      </div>
+
+      <div class="format-card fade-in">
+        <div class="format-icon" style="background: rgba(138, 92, 255, 0.1);">
+          <svg viewBox="0 0 24 24" style="stroke: var(--blue-dark);"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+        </div>
+        <h3>OLV</h3>
+        <p class="format-type">Pre-roll — Long-form assets</p>
+        <p>
+          If Yazoo has longer-form video content, OLV delivers it as standard pre-roll — served before the content a user has chosen to watch across premium publisher environments. This is what drove the Samsung Gen Z results: 89% peak video completion rate, 2.7× CTR above benchmark, 83% average VCR — a Gen Z audience that actively engaged rather than skipped. Programmatic delivery via DSP.
+        </p>
+        <div class="perf-mini">
+          <div class="perf-label">Benchmark performance — UK Gen Z (Samsung)</div>
+          <div class="perf-mini-row">
+            <div class="perf-mini-item"><div class="v">89%</div><div class="l">Peak VCR</div></div>
+            <div class="perf-mini-item"><div class="v">2.7×</div><div class="l">CTR v benchmark</div></div>
+            <div class="perf-mini-item"><div class="v">+22%</div><div class="l">Added value</div></div>
+          </div>
+        </div>
+        <div class="format-tags">
+          <span class="tag">Programmatic (DSP)</span>
+          <span class="tag">Pre-roll</span>
+          <span class="tag green">HFSS compliant</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top: 20px; padding: 22px 32px; background: var(--surface1); border: 1px solid var(--border); border-radius: 14px; display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap;" class="fade-in">
+      <div>
+        <div style="font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--grey-mid); margin-bottom: 6px;">Asset flexibility</div>
+        <p style="font-size: 0.875rem; color: var(--grey-light); max-width: 640px; line-height: 1.7;">The format mix depends on what assets Yazoo has available. Got short-form video? We run it as 100% SOS Video. Got longer-form content? We run it as OLV pre-roll. Display assets work as 100% SOS Display. Any combination of the three can run within the same campaign. All use standard IAB specifications. No bespoke production required — creative build handled by our managed service team.</p>
+      </div>
+      <a href="mailto:tanya.o@alkimi.org?subject=Yazoo%20×%20Alkimi%20—%20Creative%20Assets" class="btn-secondary" style="white-space: nowrap; flex-shrink: 0;">Discuss assets</a>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ═══ BUDGET ═══ -->
+<section id="budget">
+  <div class="container">
+    <div class="section-header fade-in">
+      <p class="overline">The Investment</p>
+      <h2 class="section-title">Two plans, one strategy</h2>
+      <p class="section-subtitle">
+        Both plans run across 100% Share of Screen Display, 100% SOS Video (short-form), and/or OLV Pre-roll (long-form) — the exact format mix confirmed once we know what assets Yazoo has available. Budget is weighted 65% to the summer burst, 35% to the freshers burst. Toggle to compare.
+      </p>
+    </div>
+
+    <div class="budget-toggle fade-in">
+      <button class="toggle-btn active" data-plan="70k">£70,000 Plan</button>
+      <button class="toggle-btn" data-plan="30k">£30,000 Plan</button>
+    </div>
+
+    <div class="budget-plans">
+
+      <!-- £70k -->
+      <div class="budget-plan active" id="plan-70k">
+        <div class="bursts-grid">
+          <div class="burst-card">
+            <div class="burst-head">
+              <div>
+                <div class="burst-name">Burst 1 — Summer</div>
+                <div class="burst-dates-block">
+                  <div class="burst-date">Live: 29 June – 24 August 2026</div>
+                  <div class="burst-date">Duration: 8 weeks</div>
+                </div>
+              </div>
+              <div>
+                <div class="burst-total">£45,500</div>
+                <div class="burst-pct">65% of total</div>
+              </div>
+            </div>
+            <div class="format-lines">
+              <div class="fline"><span class="fline-dot"></span><span class="fline-name">100% Share of Screen — Display</span></div>
+              <div class="fline"><span class="fline-dot gd"></span><span class="fline-name">100% SOS Video — short-form assets</span></div>
+              <div class="fline"><span class="fline-dot" style="background: var(--white-muted);"></span><span class="fline-name">OLV Pre-roll — long-form assets</span></div>
+            </div>
+            <div style="font-size: 0.65rem; color: var(--grey-mid); margin-top: -4px; padding: 0 4px; line-height: 1.5;">Format mix confirmed once assets are shared — any combination of the three can run.</div>
+            <div class="timeline-mini">
+              <div class="timeline-mini-row">
+                <span class="tl-key">Creative assets deadline</span>
+                <span class="tl-val">22 June 2026</span>
+              </div>
+              <div class="timeline-mini-row">
+                <span class="tl-key">Creative build &amp; set-up</span>
+                <span class="tl-val">22 – 28 June 2026</span>
+              </div>
+              <div class="timeline-mini-row">
+                <span class="tl-key">Live</span>
+                <span class="tl-val live">29 June – 24 August 2026</span>
+              </div>
+              <div class="timeline-mini-row" style="margin-top: 4px; padding-top: 10px; border-top: 1px solid var(--border);">
+                <span class="tl-key">Priority geographies</span>
+                <span class="tl-val" style="text-align: right; max-width: 240px; line-height: 1.4;">Broad UK. London, Birmingham, Manchester priority.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="burst-card">
+            <div class="burst-head">
+              <div>
+                <div class="burst-name">Burst 2 — Back to Uni</div>
+                <div class="burst-dates-block">
+                  <div class="burst-date">Live: 1 – 28 September 2026</div>
+                  <div class="burst-date">Duration: 4 weeks</div>
+                </div>
+              </div>
+              <div>
+                <div class="burst-total">£24,500</div>
+                <div class="burst-pct">35% of total</div>
+              </div>
+            </div>
+            <div class="format-lines">
+              <div class="fline"><span class="fline-dot"></span><span class="fline-name">100% Share of Screen — Display</span></div>
+              <div class="fline"><span class="fline-dot gd"></span><span class="fline-name">100% SOS Video — short-form assets</span></div>
+              <div class="fline"><span class="fline-dot" style="background: var(--white-muted);"></span><span class="fline-name">OLV Pre-roll — long-form assets</span></div>
+            </div>
+            <div style="font-size: 0.65rem; color: var(--grey-mid); margin-top: -4px; padding: 0 4px; line-height: 1.5;">Format mix confirmed once assets are shared — any combination of the three can run.</div>
+            <div class="timeline-mini">
+              <div class="timeline-mini-row">
+                <span class="tl-key">Creative assets deadline</span>
+                <span class="tl-val">25 August 2026</span>
+              </div>
+              <div class="timeline-mini-row">
+                <span class="tl-key">Creative build &amp; set-up</span>
+                <span class="tl-val">25 – 31 August 2026</span>
+              </div>
+              <div class="timeline-mini-row">
+                <span class="tl-key">Live</span>
+                <span class="tl-val live">1 – 28 September 2026</span>
+              </div>
+              <div class="timeline-mini-row" style="margin-top: 4px; padding-top: 10px; border-top: 1px solid var(--border);">
+                <span class="tl-key">Priority geographies</span>
+                <span class="tl-val" style="text-align: right; max-width: 240px; line-height: 1.4;">University city weighting added. London, Birmingham, Manchester + key campus cities.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="budget-total-bar">
+          <div class="total-label">Total investment<strong>£70,000</strong></div>
+          <div class="budget-note">Fully managed service. Both formats use standard IAB specifications. All placements HFSS-compliant in line with CAP/BCAP regulations. Brand lift study and AI Visibility Study included — see Measurement section.</div>
+        </div>
+      </div>
+
+      <!-- £30k -->
+      <div class="budget-plan" id="plan-30k">
+        <div class="bursts-grid">
+          <div class="burst-card">
+            <div class="burst-head">
+              <div>
+                <div class="burst-name">Burst 1 — Summer</div>
+                <div class="burst-dates-block">
+                  <div class="burst-date">Live: 29 June – 24 August 2026</div>
+                  <div class="burst-date">Duration: 8 weeks</div>
+                </div>
+              </div>
+              <div>
+                <div class="burst-total">£19,500</div>
+                <div class="burst-pct">65% of total</div>
+              </div>
+            </div>
+            <div class="format-lines">
+              <div class="fline"><span class="fline-dot"></span><span class="fline-name">100% Share of Screen — Display</span></div>
+              <div class="fline"><span class="fline-dot gd"></span><span class="fline-name">100% SOS Video — short-form assets</span></div>
+              <div class="fline"><span class="fline-dot" style="background: var(--white-muted);"></span><span class="fline-name">OLV Pre-roll — long-form assets</span></div>
+            </div>
+            <div style="font-size: 0.65rem; color: var(--grey-mid); margin-top: -4px; padding: 0 4px; line-height: 1.5;">Format mix confirmed once assets are shared — any combination of the three can run.</div>
+            <div class="timeline-mini">
+              <div class="timeline-mini-row">
+                <span class="tl-key">Creative assets deadline</span>
+                <span class="tl-val">22 June 2026</span>
+              </div>
+              <div class="timeline-mini-row">
+                <span class="tl-key">Creative build &amp; set-up</span>
+                <span class="tl-val">22 – 28 June 2026</span>
+              </div>
+              <div class="timeline-mini-row">
+                <span class="tl-key">Live</span>
+                <span class="tl-val live">29 June – 24 August 2026</span>
+              </div>
+              <div class="timeline-mini-row" style="margin-top: 4px; padding-top: 10px; border-top: 1px solid var(--border);">
+                <span class="tl-key">Priority geographies</span>
+                <span class="tl-val" style="text-align: right; max-width: 240px; line-height: 1.4;">Concentrated on London, Birmingham, Manchester for maximum frequency.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="burst-card">
+            <div class="burst-head">
+              <div>
+                <div class="burst-name">Burst 2 — Back to Uni</div>
+                <div class="burst-dates-block">
+                  <div class="burst-date">Live: 1 – 28 September 2026</div>
+                  <div class="burst-date">Duration: 4 weeks</div>
+                </div>
+              </div>
+              <div>
+                <div class="burst-total">£10,500</div>
+                <div class="burst-pct">35% of total</div>
+              </div>
+            </div>
+            <div class="format-lines">
+              <div class="fline"><span class="fline-dot"></span><span class="fline-name">100% Share of Screen — Display</span></div>
+              <div class="fline"><span class="fline-dot gd"></span><span class="fline-name">100% SOS Video — short-form assets</span></div>
+              <div class="fline"><span class="fline-dot" style="background: var(--white-muted);"></span><span class="fline-name">OLV Pre-roll — long-form assets</span></div>
+            </div>
+            <div style="font-size: 0.65rem; color: var(--grey-mid); margin-top: -4px; padding: 0 4px; line-height: 1.5;">Format mix confirmed once assets are shared — any combination of the three can run.</div>
+            <div class="timeline-mini">
+              <div class="timeline-mini-row">
+                <span class="tl-key">Creative assets deadline</span>
+                <span class="tl-val">25 August 2026</span>
+              </div>
+              <div class="timeline-mini-row">
+                <span class="tl-key">Creative build &amp; set-up</span>
+                <span class="tl-val">25 – 31 August 2026</span>
+              </div>
+              <div class="timeline-mini-row">
+                <span class="tl-key">Live</span>
+                <span class="tl-val live">1 – 28 September 2026</span>
+              </div>
+              <div class="timeline-mini-row" style="margin-top: 4px; padding-top: 10px; border-top: 1px solid var(--border);">
+                <span class="tl-key">Priority geographies</span>
+                <span class="tl-val" style="text-align: right; max-width: 240px; line-height: 1.4;">Highest-index university cities to maximise freshers impact within tighter budget.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="budget-total-bar">
+          <div class="total-label">Total investment<strong>£30,000</strong></div>
+          <div class="budget-note">Fully managed service. Both formats use standard IAB specifications. All placements HFSS-compliant in line with CAP/BCAP regulations. Brand lift study and AI Visibility Study included — see Measurement section.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ═══ TIMELINE ═══ -->
+<section id="timeline">
+  <div class="container">
+    <div class="section-header fade-in">
+      <p class="overline">Clear dates. No surprises.</p>
+      <h2 class="section-title">Campaign timeline</h2>
+      <p class="section-subtitle">
+        Every milestone from brief sign-off to go-live. The dates your team and ours both need locked in.
+      </p>
+    </div>
+
+    <div class="timeline-cols fade-in">
+      <div>
+        <div class="burst-col-label">Burst 1 — Summer (June – August)</div>
+        <div class="tl-track">
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-date">Now — May 2026</div>
+            <div class="tl-title">Brief confirmed &amp; IO agreed</div>
+            <div class="tl-desc">Budget tier confirmed, insertion order issued. Existing OLV and social assets shared with Alkimi managed service team for review and adaptation.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-date">22 June 2026</div>
+            <div class="tl-title">Creative assets deadline</div>
+            <div class="tl-desc">All OLV and display assets to be supplied or approved. Alkimi managed service team begins creative build and set-up. Standard IAB specifications apply — no bespoke production required.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-date">22 – 28 June 2026</div>
+            <div class="tl-title">Creative build &amp; set-up</div>
+            <div class="tl-desc">Campaign trafficking, IAS verification tags applied, targeting parameters and HFSS compliance checks confirmed. Final sign-off from Yazoo brand team.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot live"></div>
+            <div class="tl-date live">29 June 2026 — Go Live</div>
+            <div class="tl-title">Burst 1 launches</div>
+            <div class="tl-desc">Campaign live across UK. Live delivery reporting from day one. Runs 8 weeks through to 24 August 2026.</div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="burst-col-label">Burst 2 — Back to Uni (September)</div>
+        <div class="tl-track">
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-date">Post-Burst 1 — Late August</div>
+            <div class="tl-title">Mid-campaign review</div>
+            <div class="tl-desc">Burst 1 performance reviewed — audience data, top-performing inventory, geo breakdown. Learnings applied to Burst 2 targeting and creative mix. Creative refresh recommended.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-date">25 August 2026</div>
+            <div class="tl-title">Burst 2 creative assets deadline</div>
+            <div class="tl-desc">Updated or refreshed assets supplied. Creative variation recommended to reduce audience fatigue from Burst 1. Freshers-angle messaging where available.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-date">25 – 31 August 2026</div>
+            <div class="tl-title">Creative build &amp; set-up</div>
+            <div class="tl-desc">University city weighting applied. Freshers audience segments activated. Final confirmation before go-live.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot live"></div>
+            <div class="tl-date live">1 September 2026 — Go Live</div>
+            <div class="tl-title">Burst 2 launches</div>
+            <div class="tl-desc">Freshers burst live. University city targeting prioritised alongside broad UK. Runs 4 weeks to 28 September 2026. End-of-campaign report and brand lift readout follows.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ═══ MEASUREMENT ═══ -->
+<section id="measurement">
+  <div class="container">
+    <div class="section-header fade-in">
+      <p class="overline">Measuring success</p>
+      <h2 class="section-title">Tracking the perception shift</h2>
+      <p class="section-subtitle">
+        Reach and impressions are the primary KPI, with live delivery reporting throughout. But Yazoo's brief is about perception change — so we've built the measurement to match, including two studies that go directly to the brand imagery goals.
+      </p>
+    </div>
+
+    <div class="measurement-grid">
+      <div class="measure-card fade-in">
+        <span class="measure-badge">Included</span>
+        <h4>Live delivery reporting</h4>
+        <p>Real-time impression reporting throughout both bursts. Viewability, frequency, and geo performance breakdowns included as standard. Accessible from day one via the Alkimi dashboard.</p>
+      </div>
+
+      <div class="measure-card fade-in">
+        <span class="measure-badge">Brand Lift Study</span>
+        <h4>Bespoke brand perception tracking</h4>
+        <p>Five bespoke questions, benchmarked against up to five competitors (Frijj, Shaken Udder, Chocomel, Cadbury's, Arctic Coffee). Directly tracks Yazoo's brand imagery KPIs — consideration, relevance, "brand for me", "fun brand" — to measure the perception shift in market.</p>
+      </div>
+
+      <div class="measure-card fade-in">
+        <span class="measure-badge foc">Included FOC</span>
+        <h4>AI Visibility Study</h4>
+        <p>Tracks how Yazoo's brand is represented across AI platforms — ChatGPT, Claude, Gemini, and Perplexity. Ensures Yazoo's brand narrative aligns with Gen Z discovery behaviours as AI search continues to evolve. Included free of charge.</p>
+      </div>
+    </div>
+
+    <div class="kpi-bar fade-in" style="margin-top: 20px;">
+      <div class="kpi-cols">
+        <div>
+          <div class="kpi-col-label">Primary KPIs</div>
+          <div class="kpi-col-val">Reach &amp; Impressions across core range. 18–24 target audience. Live reporting throughout both bursts.</div>
+        </div>
+        <div>
+          <div class="kpi-col-label">Quality metrics</div>
+          <div class="kpi-col-val">Viewability, IAS Pass Rate, Video Completion Rate, CTR — benchmarked against category</div>
+        </div>
+        <div>
+          <div class="kpi-col-label">Brand metrics</div>
+          <div class="kpi-col-val">Consideration, recall, "brand for me", "fun brand" — via Brand Lift Study. AI brand narrative via AI Visibility Study (FOC).</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ═══ WHY ALKIMI ═══ -->
+<section id="why-alkimi">
+  <div class="container">
+    <div class="section-header fade-in">
+      <p class="overline">Why Alkimi for Yazoo</p>
+      <h2 class="section-title">Built differently. Proven in market.</h2>
+      <p class="section-subtitle">
+        A blockchain-based programmatic exchange and certified B Corporation — built for transparency, efficiency, and accountability. 70% lower tech fees than traditional DSPs means more of Yazoo's budget reaches actual audiences.
+      </p>
+    </div>
+
+    <div class="proof-grid fade-in">
+      <div class="proof-card">
+        <div class="proof-val">60%</div>
+        <div class="proof-lbl">More attention than standard display — Lumen verified</div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-val">70%</div>
+        <div class="proof-lbl">Lower tech fees vs traditional DSPs — more budget reaching audiences</div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-val">97%</div>
+        <div class="proof-lbl">IAS Pass Rate — comparable FMCG delivery</div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-val">B Corp</div>
+        <div class="proof-lbl">Certified — accelerating your path to net zero</div>
+      </div>
+    </div>
+
+    <div class="pillars-grid fade-in">
+      <div class="pillar">
+        <h5>Fully managed service</h5>
+        <p>Alkimi handles creative build, trafficking, QA, IAS verification, and reporting. Your team provides the assets; we handle everything else — on time, on brief, on budget.</p>
+      </div>
+      <div class="pillar">
+        <h5>Clean, direct publisher access</h5>
+        <p>Direct access to premium publishers — Comscore Top 1000 and beyond. No resellers, no middlemen. Every pound goes further because the supply chain is short, verified, and built for quality.</p>
+      </div>
+      <div class="pillar">
+        <h5>Sustainable by design</h5>
+        <p>Alkimi is a certified B Corporation, meeting the highest standards of social and environmental impact — aligning with Yazoo's sustainability commitments and accelerating the path to net zero.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ═══ NEXT STEPS ═══ -->
+<section class="cta-section" id="next-steps">
+  <div class="container">
+    <p class="overline green" style="text-align: center;">Next steps</p>
+    <h2 class="cta-title">
+      Ready to make<br>
+      <span class="gradient">Yazoo cool again?</span>
+    </h2>
+    <p class="cta-subtitle">
+      Both plans are ready to activate. Confirm the budget tier, share your existing assets, and Alkimi's managed service team handles everything from there. 29th June is within reach.
+    </p>
+    <div class="cta-actions">
+      <a href="mailto:tanya.o@alkimi.org?subject=Yazoo%20×%20Alkimi%20—%20Summer%202026%20Proposal" class="btn-primary">Respond to this proposal</a>
+      <a href="mailto:tanya.o@alkimi.org?subject=Let%27s%20talk%20Yazoo" class="btn-secondary">Book a call with Tanya</a>
+    </div>
+    <div class="cta-meta">Tanya O &nbsp;·&nbsp; tanya.o@alkimi.org &nbsp;·&nbsp; Alkimi Exchange</div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="68 46 216 48">
+          <path d="M83.8615 58.6759C78.5907 58.5085 73.4034 59.9878 69.0608 62.8966L72.2676 68.7C75.3341 66.4522 79.084 65.2623 82.9241 65.3187C88.7704 65.3187 91.6565 68.0525 91.6565 72.7289V73.2325H82.5787C71.9222 73.2325 68 77.693 68 83.4005C68 89.1081 73.057 93.6166 81.074 93.6166C86.3283 93.6166 90.1518 91.9618 92.1005 89.0121V93.1609H99.8462V73.0646C99.8462 63.2323 93.9999 58.6759 83.8861 58.6759H83.8615ZM91.6319 82.5132C90.9055 84.187 89.6588 85.5979 88.0663 86.5483C86.4738 87.4987 84.6154 87.9409 82.7514 87.8131C78.5332 87.8131 76.0417 85.9665 76.0417 83.0168C76.0417 80.6187 77.5465 78.4844 83.1461 78.4844H91.6319V82.4413V82.5132Z"/>
+          <path d="M113.711 46H105.497V93.4109H113.711V46Z"/>
+          <path d="M145.855 93.7292H155.845L139.811 73.9447L154.464 59.6278H144.597L127.576 74.9519V46H119.361V93.7292H127.576V84.7362L133.693 79.1006L145.855 93.7292Z"/>
+          <path d="M167.592 59.3477H159.378V93.473H167.592V59.3477Z"/>
+          <path d="M218.253 59.034C215.761 58.9459 213.281 59.412 211.002 60.397C208.724 61.382 206.707 62.8597 205.105 64.7176C203.822 62.8392 202.051 61.324 199.972 60.3258C197.892 59.3277 195.578 58.8819 193.264 59.034C191.102 58.9506 188.947 59.3381 186.958 60.1679C184.97 60.9977 183.197 62.2489 181.769 63.8302V59.4896H173.949V93.591H182.164V76.2765C182.164 69.5138 185.839 66.0605 191.291 66.0605C196.224 66.0605 199.184 69.0102 199.184 75.0774V93.591H207.399V76.2765C207.399 69.5138 211.148 66.0605 216.526 66.0605C221.46 66.0605 224.42 69.0102 224.42 75.0774V93.591H232.634V74.0463C232.634 63.7583 226.714 59.1059 218.253 59.1059"/>
+          <path d="M246.093 85.2653V67.2933C246.093 62.7562 242.415 59.0781 237.877 59.0781V93.4804C242.415 93.4804 246.093 89.8024 246.093 85.2653Z"/>
+          <path d="M262.163 59.0781C260.952 59.0781 261.062 60.3218 261.503 60.7674C261.985 61.1977 263.589 62.8645 263.589 62.8645L263.589 67.5642C263.589 67.5642 254.221 84.7493 253.026 86.9955C251.49 89.8835 253.906 93.4804 256.657 93.4804C258.562 93.4804 275.266 93.4804 278.111 93.4804C281.412 93.4804 283.833 90.0974 282.292 86.9955C281.75 85.9032 271.51 67.5642 271.51 67.5642V62.867L273.621 60.7674C274.267 60.1379 273.968 59.0781 273.044 59.0781C272.12 59.0781 263.549 59.0781 262.163 59.0781Z"/>
+        </svg>
+      </div>
+      <div class="footer-note">
+        Prepared for Yazoo — confidential. All figures sourced from confirmed Alkimi campaign data. Fully managed service. Powered by Alkimi Exchange.
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Budget toggle
+  document.querySelectorAll('.toggle-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.budget-plan').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('plan-' + btn.dataset.plan).classList.add('active');
+    });
+  });
+
+  // Scroll fade-in
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 60);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
